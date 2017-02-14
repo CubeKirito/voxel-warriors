@@ -15,6 +15,25 @@
 
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 
+		<style>
+			#idMessagebox_Command {
+				position: fixed;
+				bottom: 10px;
+				left: 50%;
+				margin-left: -150px;
+				width: 300px;
+				height: 30px;
+				background: rgba(1, 1, 1, 0.4);
+				color: white;
+				transition-duration: 1s;
+			}
+
+			#idMessagebox_Command:focus {
+				background: black;
+				transition-duration: 1s;
+			}
+		</style>
+
 		<script type="text/javascript" src="/index.js"></script>
 	</head>
 	<body style="overflow:hidden;">
@@ -70,7 +89,7 @@
 						<input class="form-control" id="idMessagebox_Chat" type="text" placeholder="Message" />
 					</div>
 				</div>
-				<input class="form-control" id="idMessagebox_Command" type="text" placeholder="Enter some turtle code..." style="position: fixed; bottom: 10px; left: 50%; margin-left: -150px; width: 300px; height: 30px; background: rgba(1, 1, 1, 0.4); color: white;" />
+				<input class="form-control" id="idMessagebox_Command" type="text" placeholder="Enter some turtle code..." />
 			</div>
 		</div>
 

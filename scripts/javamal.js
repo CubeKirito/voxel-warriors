@@ -1,5 +1,5 @@
 /*jslint esversion: 6*/
-function onPlayerChat(event){
+function onPlayerCommand(event){
 	var human = event.getHuman();
 	var cmd = event.getMessage();
 	if (cmd.indexOf('/do ') !== -1){

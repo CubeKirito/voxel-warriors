@@ -324,6 +324,11 @@ var VoxConf = require(__dirname + '/VoxConf.js')();
 				}
 			});
 
+			// command
+			objectSocket.on('eventCommand', function(objectData) {
+				ScriptManager.callPlayerCommandEvent(objectData, objectSocket);
+			});
+
 			objectSocket.on('eventChat', function(objectData) {
 				if (objectData.strMessage === undefined) {
 					return;

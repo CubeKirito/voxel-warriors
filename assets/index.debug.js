@@ -127,7 +127,7 @@ var Gui = {
 					}
 
 					{
-						Socket.objectSocket.emit('eventChat', {
+						Socket.objectSocket.emit('eventCommand', {
 							'strMessage': "/" + jQuery('#idMessagebox_Command').val()
 						});
 					}

@@ -39,6 +39,8 @@ module.exports.onLoad = function(nodeRect, server, human, three){
 	module.exports.onPlayerLogin = onPlayerLogin;
 	if (typeof onPlayerChat === 'undefined') var onPlayerChat = undefined ;
 	module.exports.onPlayerChat = onPlayerChat ;
+	if (typeof onPlayerCommand === 'undefined') var onPlayerCommand = undefined ;
+	module.exports.onPlayerCommand = onPlayerCommand ;
 	if (typeof onPlayerQuit === 'undefined') var onPlayerQuit = undefined ;
 	module.exports.onPlayerQuit = onPlayerQuit ;
 	if (typeof onPlayerHit === 'undefined') var onPlayerHit = undefined ;

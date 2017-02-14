@@ -847,6 +847,50 @@ exports.callPlayerChatEvent = function(objectData, objectSocket) {
 }
 
 /**
+ * 플레이어가 명령을 할 시 발동됩니다.
+ * @author CubeKirito
+ * @param {Object} objectData 각종 정보
+ * @param {Object} objectSocket 플레이어 불러오기 등등을 위함
+ * @class
+ */
+exports.PlayerCommandEvent = function(objectData, objectSocket) {
+    /**
+     * PlayerCommandEvent를 발생시킨 Human을 가져옵니다.
+     * @author CubeKirito
+     * @return {Human} Human
+     */
+    this.getHuman = function() {
+        return new Human().setHumanIdent(objectSocket.strIdent);
+    }
+
+    /**
+     * PlayerCommandEvent에서 커맨드를 가져옵니다.
+     * @author CubeKirito
+     * @return {String} 커맨드
+     */
+    this.getMessage = function() {
+        return objectData.strMessage;
+    }
+}
+
+/**
+ * PlayerCommandEvent를 모든 스크립트에게 전송합니다.
+ * @author CubeKirito
+ * @param  {Object} objectData
+ * @param  {Object} objectSocket
+ * @return {PlayerChatEvent} PlayerChatEvent
+ */
+exports.callPlayerCommandEvent = function(objectData, objectSocket) {
+    var event = new exports.PlayerCommandEvent(objectData, objectSocket);
+    for (var i of exports.scripts) {
+        if (typeof i.onPlayerCommand != "undefined") {
+            i.onPlayerCommand(event);
+        }
+    }
+    return event;
+}
+
+/**
  * 플레이어가 블럭을 설치했을 때 발동됩니다.
  * @author Scripter36(1350adwx)
  * @param {Object} objectData   [description]
