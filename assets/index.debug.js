@@ -118,6 +118,27 @@ var Gui = {
 					}
 				})
 			;
+
+			jQuery('#idMessagebox_Command')
+				.off('keyup')
+				.on('keyup', function(objectEvent) {
+					if (objectEvent.keyCode !== 13) {
+						return;
+					}
+
+					{
+						Socket.objectSocket.emit('eventChat', {
+							'strMessage': "/" + jQuery('#idMessagebox_Command').val()
+						});
+					}
+
+					{
+						jQuery('#idMessagebox_Command')
+							.val('')
+						;
+					}
+				})
+			;
 		}
 
 		{
@@ -1003,7 +1024,8 @@ window.addEventListener('load', function () {
 		Input.functionException = function() {
 			if (jQuery('#idMessagebox_Chat').get(0) === window.document.activeElement) {
 				return true;
-
+			} else if (jQuery('#idMessagebox_Command').attr('id') === window.document.activeElement.id) {
+				return true;
 			} else if (jQuery('#idLogin_Name').get(0) === window.document.activeElement) {
 				return true;
 

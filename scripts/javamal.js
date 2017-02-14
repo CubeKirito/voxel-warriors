@@ -1,16 +1,16 @@
 /*jslint esversion: 6*/
 function onPlayerChat(event){
-	let human = event.getHuman();
-	let cmd = event.getMessage();
+	var human = event.getHuman();
+	var cmd = event.getMessage();
 	if (cmd.indexOf('/do ') !== -1){
-		let pos = human.getPosition().slice();
-		let yaw = human.getRotation()[1];
-		let pitch = human.getRotation()[2];
-		let rotate = [Math.round(-Math.sin(yaw)), Math.round(Math.sin(pitch)), Math.round(-Math.cos(yaw))];
+		var pos = human.getPosition().slice();
+		var yaw = human.getRotation()[1];
+		var pitch = human.getRotation()[2];
+		var rotate = [Math.round(-Math.sin(yaw)), Math.round(Math.sin(pitch)), Math.round(-Math.cos(yaw))];
 		console.log(rotate);
 		cmd = cmd.split('/do ')[1].split('');
-		let type = "voxelBrick";
-		for (let i of cmd){
+		var type = "voxelBrick";
+		for (var i of cmd){
 			if (i === 's'){//앞으로 1칸
 				pos[0] += rotate[0];
 				pos[2] += rotate[2];

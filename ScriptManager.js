@@ -83,7 +83,7 @@ Server.sendMessage = function(sender, message, receiver) {
  */
 Server.setBlock = function(position, blockType, boolBlocked) {
     if (typeof position === 'undefined' || position.length !== 3) return;
-	for (let i in position) position[i] = parseInt(position[i]);
+	for (var i in position) position[i] = parseInt(position[i]);
     if (boolBlocked == undefined) boolBlocked = false;
     boolBlocked = boolBlocked == true;
     if (blockType == undefined || blockType == null) {
@@ -628,8 +628,8 @@ exports.PlayerLoginEvent = function(objectData, resultData) {
  * @return {PlayerLoginEvent} PlayerLoginEvent
  */
 exports.callPlayerLoginEvent = function(objectData, objectSocket) {
-    let event = new exports.PlayerLoginEvent(objectData, objectSocket);
-    for (let i of exports.scripts) {
+    var event = new exports.PlayerLoginEvent(objectData, objectSocket);
+    for (var i of exports.scripts) {
         if (typeof i.onPlayerLogin != "undefined") {
             i.onPlayerLogin(event);
         }
@@ -837,8 +837,8 @@ exports.PlayerChatEvent = function(objectData, objectSocket) {
  * @return {PlayerChatEvent} PlayerChatEvent
  */
 exports.callPlayerChatEvent = function(objectData, objectSocket) {
-    let event = new exports.PlayerChatEvent(objectData, objectSocket);
-    for (let i of exports.scripts) {
+    var event = new exports.PlayerChatEvent(objectData, objectSocket);
+    for (var i of exports.scripts) {
         if (typeof i.onPlayerChat != "undefined") {
             i.onPlayerChat(event);
         }
@@ -1015,8 +1015,8 @@ exports.BlockBreakEvent = function(objectData, objectSocket) {
  * @return {BlockPlaceEvent} BlockPlaceEvent
  */
 exports.callBlockPlaceEvent = function(objectData, objectSocket) {
-    let event = new exports.BlockPlaceEvent(objectData, objectSocket);
-    for (let i of exports.scripts) {
+    var event = new exports.BlockPlaceEvent(objectData, objectSocket);
+    for (var i of exports.scripts) {
         if (typeof i.onBlockPlace != "undefined") {
             i.onBlockPlace(event);
         }
@@ -1032,8 +1032,8 @@ exports.callBlockPlaceEvent = function(objectData, objectSocket) {
  * @return {BlockBreakEvent} BlockBreakEvent
  */
 exports.callBlockBreakEvent = function(objectData, objectSocket) {
-    let event = new exports.BlockBreakEvent(objectData, objectSocket);
-    for (let i of exports.scripts) {
+    var event = new exports.BlockBreakEvent(objectData, objectSocket);
+    for (var i of exports.scripts) {
         if (typeof i.onBlockBreak != "undefined") {
             i.onBlockBreak(event);
         }
@@ -1083,8 +1083,8 @@ exports.PlayerQuitEvent = function(objectSocket) {
  */
 exports.callPlayerQuitEvent = function(objectSocket) {
     if (new Human().setHumanIdent(objectSocket.strIdent).getName() == "") return;
-    let event = new exports.PlayerQuitEvent(objectSocket);
-    for (let i of exports.scripts) {
+    var event = new exports.PlayerQuitEvent(objectSocket);
+    for (var i of exports.scripts) {
         if (typeof i.onPlayerQuit != "undefined") {
             i.onPlayerQuit(event);
         }
@@ -1186,7 +1186,7 @@ exports.PlayerHitEvent = function(objectPlayer, objectItem, damage) {
      * @param {String} name 아이템 이름
      */
     this.setItemName = function(name) {
-        let ident = objectItem.strIdent.split("-");
+        var ident = objectItem.strIdent.split("-");
         ident.splice(0, 1);
         objectItem.strIdent = name.toString() + "-" + ident;
     }
@@ -1201,8 +1201,8 @@ exports.PlayerHitEvent = function(objectPlayer, objectItem, damage) {
  * @return {PlayerHitEvent}      PlayerHitEvent
  */
 exports.callPlayerHitEvent = function(objectPlayer, objectItem, damage) {
-    let event = new exports.PlayerHitEvent(objectPlayer, objectItem, damage);
-    for (let i of exports.scripts) {
+    var event = new exports.PlayerHitEvent(objectPlayer, objectItem, damage);
+    for (var i of exports.scripts) {
         if (typeof i.onPlayerHit != "undefined") {
             i.onPlayerHit(event);
         }
@@ -1262,8 +1262,8 @@ exports.PlayerDeathEvent = function(objectPlayer) {
  * @return {PlayerDeathEvent}      PlayerDeathEvent
  */
 exports.callPlayerDeathEvent = function(objectPlayer) {
-    let event = new exports.PlayerDeathEvent(objectPlayer);
-    for (let i of exports.scripts) {
+    var event = new exports.PlayerDeathEvent(objectPlayer);
+    for (var i of exports.scripts) {
         if (typeof i.onPlayerDeath != "undefined") {
             i.onPlayerDeath(event);
         }
@@ -1273,7 +1273,7 @@ exports.callPlayerDeathEvent = function(objectPlayer) {
 
 
 exports.callServerTickEvent = function() {
-    for (let i of exports.scripts) {
+    for (var i of exports.scripts) {
         if (typeof i.onServerTick != "undefined") {
             i.onServerTick();
         }
