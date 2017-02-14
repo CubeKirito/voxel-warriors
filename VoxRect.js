@@ -870,63 +870,6 @@ var Gameserver = {
 		}
 	},
 
-	phaseUpdate: function() {
-		if (!ScriptManager.isPhaseChange) return;
-		{
-			Gameserver.intPhaseRemaining = Math.max(0, Gameserver.intPhaseRemaining - Constants.intGameLoop);
-		}
-
-		{
-			if (Gameserver.intPhaseRemaining === 0) {
-				{
-					if (Gameserver.strPhaseActive === 'Build') {
-						{
-							Gameserver.strPhaseActive = 'Combat';
-
-							Gameserver.intPhaseRound -= 0;
-
-							Gameserver.intPhaseRemaining = VoxConf.intPhaseRemaining;
-						}
-
-					} else if (Gameserver.strPhaseActive === 'Combat') {
-						{
-							Gameserver.strPhaseActive = 'Build';
-
-							Gameserver.intPhaseRound -= 1;
-
-							Gameserver.intPhaseRemaining = VoxConf.intPhaseRemaining;
-						}
-
-					}
-				}
-
-				{
-					if (Gameserver.intPhaseRound === 0) {
-						{
-							Gameserver.strPhaseActive = 'Build';
-
-							Gameserver.intPhaseRound = VoxConf.intPhaseRound;
-
-							Gameserver.intPhaseRemaining = VoxConf.intPhaseRemaining;
-						}
-
-						{
-							Gameserver.strWorldActive = Gameserver.strWorldAvailable[(Gameserver.strWorldAvailable.indexOf(Gameserver.strWorldActive) + 1) % Gameserver.strWorldAvailable.length];
-
-							Gameserver.strWorldFingerprint = '';
-						}
-
-						{
-							Gameserver.intScoreRed = 0;
-
-							Gameserver.intScoreBlue = 0;
-						}
-					}
-				}
-			}
-		}
-	},
-
 	worldUpdate: function() {
 		{
 			var boolGood = true;
@@ -1403,9 +1346,6 @@ var Gameserver = {
 				}
 
 			} else if (Gameserver.intPlayerActive !== 0) {
-				{
-					Gameserver.phaseUpdate();
-				}
 
 				{
 					World.update();

@@ -5,7 +5,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
 
-		<title>퍁디 전사들</title>
+		<title>Voxel-Builder</title>
 
 		<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAxlBMVEUAAABOWZ5BTZhCTZhHUpt7g7d5gbZ5grZ5grZ6grZsda9tdq9tdrBtd7Bsdq9ye7Jye7JzfLN0fbNxerJdaKdeaadfaahfaqhha6ldZ6dfaahfaqhjbat/h7mAh7mFjLx8hLh3gLV6grZ6grdfaahgaqlibKpha6ljbapRXKBSXKBUX6JTXqFSXaH///+uuNXEzOHx9Pvb4O+5wtv8/f+zvdi+x97m6vXr7/edqcujrs6/x97V2+vg5fGNmcKXo8jJ0eXQ1ucIdJUyAAAALnRSTlMACR0dI1BRUVJSiIiIiIi8vb29vdbW1tbW4uLi4uzs7Ozs7Ozx8fHx8f39/f39FstVagAAALZJREFUeNptz8cWgkAMBVAYR8Xee1fAnoQBBOz+/0+ZgaVmlXcX7ySG8TumKLV3x6PbsoSZZlkbLq7JlWb9itQiqtMn+vEDIn9cFgzWgBDD8AHB5dazGFqzAHk88PCzbDK45KUZgjuSw3BS4N85A1xQHTRE4PlxCqHaM2yJdyKKAGKydemcQde8AVYdhmKfMsCAugV9WGXCohAVjdLDTFnvremWvDbdssyeEYWmc97bjXzO/PP7F9bvG7XExUxsAAAAAElFTkSuQmCC" />
 
@@ -49,7 +49,7 @@
 			<div id="idWest" style="position:fixed; left:0px; top:0px; bottom:0px; width:480px; padding:15px;">
 				<div class="panel panel-default modal-content" style="display:none">
 					<div class="panel-heading">
-						Message of the Day
+						공지
 					</div>
 					<div class="panel-body">
 						<div class="form-control" style="height:200px; overflow-y:scroll; font-family:Courier;">
@@ -60,7 +60,7 @@
 
 				<div class="panel panel-default modal-content">
 					<div class="panel-heading">
-						Messagebox
+						채팅
 					</div>
 					<div class="panel-body">
 						<div class="form-control" id="idMessagebox_Log" style="height:200px; overflow-y:scroll;"></div>
@@ -70,28 +70,28 @@
 						<input class="form-control" id="idMessagebox_Chat" type="text" placeholder="Message" />
 					</div>
 				</div>
-				<input class="form-control" id="idMessagebox_Command" type="text" placeholder="Enter some turtle code..." style="position: fixed; bottom: 100px; left: 50%; margin-left: -150px; width: 300px; height: 30px; background: rgba(1, 1, 1, 0.4); color: white;" />
+				<input class="form-control" id="idMessagebox_Command" type="text" placeholder="Enter some turtle code..." style="position: fixed; bottom: 10px; left: 50%; margin-left: -150px; width: 300px; height: 30px; background: rgba(1, 1, 1, 0.4); color: white;" />
 			</div>
 		</div>
 
 		<div id="idEastside" style="position:fixed; right:0px; top:0px; bottom:0px; width:480px; padding:15px;">
 			<div class="panel panel-default modal-content">
 				<div class="panel-heading">
-					Server
+					서버 상태
 				</div>
 				<div class="panel-body">
 					<table class="table" style="margin:0px;">
 						<tr>
 							<th style="width:1%; border:none; text-align:right; white-space:nowrap;">
-								Ping:
+								지연 시간:
 							</th>
 							<td style="border:none;">
-								<span id="idServer_Ping"></span>
+								<span id="idServer_Ping"></span>ms
 							</td>
 						</tr>
 						<tr>
 							<th style="text-align:right; white-space:nowrap;">
-								World:
+								월드:
 							</th>
 							<td>
 								<span id="idServer_World"></span>
@@ -99,15 +99,7 @@
 						</tr>
 						<tr>
 							<th style="text-align:right; white-space:nowrap;">
-								Phase:
-							</th>
-							<td>
-								<span id="idServer_Phase"></span>
-							</td>
-						</tr>
-						<tr>
-							<th style="text-align:right; white-space:nowrap;">
-								Players:
+								접속자:
 							</th>
 							<td>
 								<span id="idServer_Players"></span>
@@ -116,90 +108,9 @@
 					</table>
 				</div>
 			</div>
-
-			<div class="panel panel-default modal-content">
-				<div class="panel-heading">
-					Red Team
-				</div>
-				<div class="panel-body">
-					<table class="table" style="margin:0px;">
-						<tr>
-							<th style="width:1%; border:none; text-align:right; white-space:nowrap;">
-								Players:
-							</th>
-							<td style="border:none;">
-								<span id="idTeamRed_Players"></span>
-							</td>
-						</tr>
-						<tr>
-							<th style="text-align:right; white-space:nowrap;">
-								Score:
-							</th>
-							<td>
-								<span id="idTeamRed_Score"></span>
-							</td>
-						</tr>
-					</table>
-
-					<div style="height:15px;"></div>
-
-					<table class="table" id="idTeamRed_Table" style="margin:0px;">
-	  					<thead>
-							<tr>
-								<th>Name</th>
-								<th width="1%">Score</th>
-								<th width="1%">Kills</th>
-								<th width="1%">Deaths</th>
-							</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
-				</div>
-			</div>
-
-			<div class="panel panel-default modal-content">
-				<div class="panel-heading">
-					Blue Team
-				</div>
-				<div class="panel-body">
-					<table class="table" style="margin:0px;">
-						<tr>
-							<th style="width:1%; border:none; text-align:right; white-space:nowrap;">
-								Players:
-							</th>
-							<td style="border:none;">
-								<span id="idTeamBlue_Players"></span>
-							</td>
-						</tr>
-						<tr>
-							<th style="text-align:right; white-space:nowrap;">
-								Score:
-							</th>
-							<td>
-								<span id="idTeamBlue_Score"></span>
-							</td>
-						</tr>
-					</table>
-
-					<div style="height:15px;"></div>
-
-					<table class="table" id="idTeamBlue_Table" style="margin:0px;">
-	  					<thead>
-							<tr>
-								<th>Name</th>
-								<th width="1%">Score</th>
-								<th width="1%">Kills</th>
-								<th width="1%">Deaths</th>
-							</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
-				</div>
-			</div>
 		</div>
-
 		<div id="idToolbar" style="position:fixed; left:0px; right:0px; bottom:0px; height:100px; text-align:center;">
-			<div class="panel panel-default modal-content" style="display:inline-block;">
+			<!--<div class="panel panel-default modal-content" style="display:inline-block;">
 				<div class="panel-body">
 					<div id="idPhaseBuild">
 						<a class="btn btn-default" stlye="display:inline-block;">
@@ -221,7 +132,7 @@
 						</a>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
 
 		<div id="idLoading" style="position:fixed; left:50%; top:50%; margin:-63px 0px 0px -63px;">
@@ -237,7 +148,7 @@
 		<div id="idLogin" style="position:fixed; left:50%; top:50%; width:490px; margin:-236px 0px 0px -235px;">
 			<div class="panel panel-default modal-content">
 				<div class="panel-heading">
-					Login
+					시작
 				</div>
 				<div class="panel-body">
 					<div class="alert alert-warning" id="idLogin_Message"></div>
@@ -245,13 +156,13 @@
 					<table class="table" style="margin:0px;">
 						<tr>
 							<th style="width:1%; border:none; padding-top:15px; text-align:right; white-space:nowrap;">
-								Name:
+								이름:
 							</th>
 							<td style="border:none;">
 								<input class="form-control" id="idLogin_Name" type="text" />
 							</td>
 						</tr>
-						<tr>
+						<!--<tr>
 							<th style="padding-top:15px; text-align:right; white-space:nowrap;">
 								Team:
 							</th>
@@ -261,7 +172,8 @@
 									<option value="teamBlue">Blue</option>
 								</select>
 							</td>
-						</tr>
+						</tr>-->
+						<input type="hidden" id="idLogin_Team" value="teamRed">
 					</table>
 
 					<table class="table" style="margin:0px;">
@@ -271,7 +183,7 @@
 							</th>
 							<td style="border:none;">
 								<a class="btn btn-primary" id="idLogin_Login">
-									Login
+									접속
 								</a>
 							</td>
 						</tr>
@@ -282,7 +194,7 @@
 			<div class="panel panel-default modal-content">
 				<div class="panel-body">
 					<div style="text-align:justify; line-height:200%;">
-						Use the <kbd>e</kbd> key in order to toggle between the game and the menu. In order to control your player, you have to click inside the world and let the game take control over your mouse. When your mouse is being locked inside the browser, use the <kbd>esc</kbd> key in order to release it again.
+						<kbd>e</kbd>키를 이용해 메뉴를 숨길 수 있습니다.<br />또한 클릭하면 마우스 커서가 게임으로 들어가고, <kbd>esc</kbd>키를 누르면 다시 나올 수 있습니다.
 					</div>
 				</div>
 			</div>
