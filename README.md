@@ -1,10 +1,13 @@
 #voxel-warriors-builder
-Voxel-Warrios-Builder ÇÁ·ÎÁ§Æ®ÀÇ RepoÀÔ´Ï´Ù.
+Voxel-Warrios-Builder í”„ë¡œì íŠ¸ì˜ Repoìž…ë‹ˆë‹¤.
 
 ##Todo
-Ä¿¸Çµå Ã¢ ¸¸µé±â<br>
-°³ÀÎ ¼¶ ¸¸µé±â<br>
-ÅëÇÕ °ü¸® ÆäÀÌÁö ¸¸µé±â<br>
-fly ±â´É ¸¸µé±â<br>
-¼³Á¤ ÆäÀÌÁö ¸¸µé±â<br>
-ÀÏºÎ ±â´É Á¦°Å
+~~ì»¤ë§¨ë“œ ì°½ ë§Œë“¤ê¸°~~<br>
+ê°œì¸ ì„¬ ë§Œë“¤ê¸°<br>
+í†µí•© ê´€ë¦¬ íŽ˜ì´ì§€ ë§Œë“¤ê¸°<br>
+fly ê¸°ëŠ¥ ë§Œë“¤ê¸°<br>
+ì„¤ì • íŽ˜ì´ì§€ ë§Œë“¤ê¸°<br>
+ì¼ë¶€ ê¸°ëŠ¥ ì œê±°
+
+##Demo
+http://snucode.org:74
