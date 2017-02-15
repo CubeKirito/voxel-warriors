@@ -8,3 +8,6 @@ Voxel-Warrios-Builder 프로젝트의 Repo입니다.
 fly 기능 만들기<br>
 설정 페이지 만들기<br>
 일부 기능 제거
+
+##Demo
+http://snucode.org:74
