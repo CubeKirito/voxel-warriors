@@ -21,7 +21,7 @@ var VoxConf = {};
 }
 
 {
-	VoxConf.strWorldAvailable = [ 'worldBasic' ]; // available worlds, which are being used consecutively
+	VoxConf.strWorldAvailable = [ 'worldBuilder' ]; // available worlds, which are being used consecutively
 }
 
 {	
